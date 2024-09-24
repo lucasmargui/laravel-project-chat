@@ -1,4 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Muli:400,300italic,300,400italic);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body,
 html {
   margin: 0;
@@ -28,7 +31,7 @@ h3 {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #99999917;
+  background: #999;
 }
 
 .window {
@@ -38,7 +41,7 @@ h3 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 400px;
+  min-height: 450px;
   position: relative;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
 }
@@ -131,7 +134,7 @@ h3 {
       -ms-transform: rotate(-5deg);
           transform: rotate(-5deg);
   -webkit-transition:background .6s ease;
-          transition:background .6s ease;
+          transition:background .6s ease;     
 }
 .color.overlay {
   position:absolute;

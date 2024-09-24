@@ -17,9 +17,19 @@ use App\Http\Controllers\OrderController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
-Route::get('/orders/create', [OrderController::class, 'create']); // Exibir o formulário
+Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
 Route::post('/orders/store', [OrderController::class, 'store'])->name('order.store');   // Processar o envio do formulário
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
