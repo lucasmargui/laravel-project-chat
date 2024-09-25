@@ -5,9 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Events\NewMessageReceived;
 use App\Models\Message;
+use App\Models\User;
+
 
 class MessageController extends Controller
 {
+
+    
+    public function index()
+    {
+        return view('messages.index', ['users' => User::all()]); 
+    }
+
+    
     public function store(Request $request)
     {
         // Creating a message (simplified example)

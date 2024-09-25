@@ -5,6 +5,7 @@ namespace App\Events;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Broadcasting\Channel;
 
 class NewMessageReceived implements ShouldBroadcast
 {
@@ -19,7 +20,7 @@ class NewMessageReceived implements ShouldBroadcast
         $this->user = $user;
     }
 
-    public function broadcastOn()
+    public function broadcastOn():Channel
     {
         // Private channel for specific user messages
         return new PrivateChannel('messages.' . $this->user->id);

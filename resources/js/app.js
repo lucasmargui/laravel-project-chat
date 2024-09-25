@@ -9,7 +9,8 @@ Alpine.plugin(focus);
 Alpine.start();
 
 
-window.Echo.channel('orders')
-    .listen('OrderCreated', (e) => {
-        console.log(e);
-    });
+
+
+
+
+ 

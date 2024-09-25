@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Broadcast;
 
+use App\Models\Order;
+use App\Models\Message;
+use App\Models\User;
+
+
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels
@@ -13,6 +18,8 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+// Definindo um canal privado para mensagens
+Broadcast::channel('messages.{id}', function ($user, $id) {
+    
+    return (int) $user->id === (int) $id; // Verifica se o usuário autenticado pode acessar o canal
 });

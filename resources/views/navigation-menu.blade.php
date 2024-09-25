@@ -18,6 +18,9 @@
                     <x-nav-link href="{{ route('orders.create') }}">
                         Orders
                     </x-nav-link>
+                    <x-nav-link href="{{ route('messages.index') }}">
+                        Messages
+                    </x-nav-link>
 
                 </div>
             </div>

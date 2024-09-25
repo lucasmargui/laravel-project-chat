@@ -32,6 +32,17 @@
 
 
     <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            window.Echo.channel('orders')
+            .listen('OrderCreated', (e) => {
+                console.log(e);
+            });
+        });
+
+
+
         document.getElementById('create-order-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Previne o comportamento padrão de atualizar a página
 
