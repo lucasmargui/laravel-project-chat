@@ -33,4 +33,6 @@ Route::middleware([
     Route::post('/orders/store', [OrderController::class, 'store'])->name('order.store');   // Processar o envio do formulário
     Route::get('/messages',  [MessageController::class, 'index'])->name('messages.index');
     Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
+    // Rota para exibir o chat com o destinatário selecionado
+    Route::post('/chat', [MessageController::class, 'showChat'])->name('messages.show');
 });
